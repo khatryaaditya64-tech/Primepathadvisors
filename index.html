@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primepath Advisors | Accounting, Bookkeeping & Zoho Consultancy</title>
+    <meta name="description" content="Expert accounting, bookkeeping, and Zoho cloud software integrations. Standardized financial reporting and custom Zoho workflows for businesses. Based in Kolkata.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           1. DESIGN SYSTEM & BASE STYLES
+           ========================================== */
+        :root {
+            /* Colors */
+            --color-primary: #0f172a;       /* Slate 900 (Navy trust) */
+            --color-primary-light: #1e293b; /* Slate 800 */
+            --color-primary-navy: #1e3a8a;  /* Blue 900 */
+            --color-accent-red: #e11d48;    /* Rose 600 (Zoho Red button) */
+            --color-accent-red-hover: #be123c;
+            --color-accent-teal: #0d9488;   /* Teal 600 (Zoho Green accent) */
+            --color-accent-blue: #2563eb;   /* Blue 600 (Zoho Blue) */
+            --color-accent-yellow: #ca8a04; /* Yellow 600 (Zoho Yellow) */
+            
+            --color-bg-light: #f8fafc;      /* Slate 50 */
+            --color-bg-white: #ffffff;
+            --color-text-main: #1e293b;     /* Slate 800 */
+            --color-text-muted: #475569;    /* Slate 600 */
+            --color-text-light: #94A3B8;    /* Slate 400 */
+            --color-border: #e2e8f0;        /* Slate 200 */
+            
+            /* Shadows & Glassmorphism */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(226, 232, 240, 0.8);
+            
+            /* Layout & Spacing */
+            --max-width: 1280px;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+            color: var(--color-text-main);
+            background-color: var(--color-bg-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utilities */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 3rem;
+            }
+        }
+
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        @media (min-width: 992px) {
+            section {
+                padding: 7rem 0;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 2rem; }
+        .mb-6 { margin-bottom: 3rem; }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            gap: 0.5rem;
+            border: 2px solid transparent;
+        }
+
+        .btn-solid {
+            background-color: var(--color-accent-red);
+            color: var(--color-bg-white);
+            box-shadow: 0 4px 14px 0 rgba(225, 29, 72, 0.3);
+        }
+
+        .btn-solid:hover {
+            background-color: var(--color-accent-red-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(225, 29, 72, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: var(--color-bg-white);
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background-color: var(--color-bg-white);
+            color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-white:hover {
+            background-color: var(--color-bg-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Section Headers */
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent-teal);
+            background-color: rgba(13, 148, 136, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.75rem;
+            }
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            margin-top: 1rem;
+        }
+
+        /* Reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Delay utilities for sequential entrance animations */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+
+        /* ==========================================
+           2. HEADER & NAVIGATION
+           ========================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: transparent;
+            border-bottom: 1px solid transparent;
+            transition: var(--transition-smooth);
+        }
+
+        header.scrolled {
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4.5rem;
+        }
+
+        @media (min-width: 992px) {
+            .nav-wrapper {
+                height: 5rem;
+            }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--color-primary);
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 2.25rem;
+            list-style: none;
+        }
+
+        @media (min-width: 992px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--color-text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent-teal);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary-navy);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: none;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .nav-actions {
+                display: flex;
+            }
+        }
+
+        /* Mobile Hamburger */
+        .burger-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1010;
+        }
+
+        @media (min-width: 992px) {
+            .burger-menu {
+                display: none;
+            }
+        }
+
+        .burger-bar {
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-primary);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        .burger-menu.open .burger-bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .burger-menu.open .burger-bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.open .burger-bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Mobile Navigation Drawer */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background-color: var(--color-bg-white);
+            box-shadow: var(--shadow-xl);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            padding: 6rem 2.5rem 3rem 2.5rem;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-nav.open {
+            right: 0;
+        }
+
+        .mobile-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .mobile-link {
+            text-decoration: none;
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .mobile-link:hover {
+            color: var(--color-accent-teal);
+            padding-left: 0.5rem;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+        }
+
+        .overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* ==========================================
+           3. HERO SECTION
+           ========================================== */
+        .hero-section {
+            padding: 8rem 0 5rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        @media (min-width: 992px) {
+            .hero-section {
+                padding: 10rem 0 7rem 0;
+            }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background-color: var(--color-bg-white);
+            border: 1px solid var(--color-border);
+            border-radius: 9999px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--color-accent-teal);
+            position: relative;
+        }
+
+        .hero-badge-dot::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--color-accent-teal);
+            opacity: 0.4;
+            animation: pulse-ring 1.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.7); opacity: 0.5; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        .hero-badge-text {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        .hero-desc {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--color-text-muted);
+            margin-bottom: 2.25rem;
+            max-width: 600px;
+        }
+
+        .hero-checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text-main);
+        }
+
+        .hero-checklist-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(13, 148, 136, 0.1);
+            color: var(--color-accent-teal);
+        }
+
+        .hero-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (min-width: 480px) {
+            .hero-btns {
+                flex-direction: row;
+            }
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* SVG visual animations */
+        .svg-hero-glow {
+            filter: drop-shadow(0 20px 30px rgba(59, 130, 246, 0.15));
+        }
+
+        /* Floating elements inside Hero SVG */
+        @keyframes float-gentle {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes float-side {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(5px, -5px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .floating-card-1 {
+            animation: float-gentle 4s ease-in-out infinite;
+        }
+
+        .floating-card-2 {
+            animation: float-gentle 5s ease-in-out infinite 0.5s;
+        }
+
+        .floating-cloud {
+            animation: float-side 6s ease-in-out infinite;
+        }
+
+        .pulse-node {
+            animation: pulse-node-glow 2.5s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        @keyframes pulse-node-glow {
+            0% { r: 4px; opacity: 0.4; }
+            50% { r: 8px; opacity: 1; }
+            100% { r: 4px; opacity: 0.4; }
+        }
+
+        /* Decorative Background Wave Curve */
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+
+        .wave-divider .shape-fill {
+            fill: var(--color-bg-white);
+        }
+
+        /* ==========================================
+           4. SERVICES SECTION
+           ========================================== */
+        .services-section {
+            background-color: var(--color-bg-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .service-card {
+            background-color: var(--color-bg-white);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2.25rem;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            transition: var(--transition-smooth);
+        }
+
+        /* Cards hover effects */
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-teal), var(--color-accent-red));
+        }
+
+        .service-icon-wrapper {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-icon-wrapper {
+            transform: scale(1.1);
+        }
+
+        .icon-blue {
+            background-color: rgba(37, 99, 235, 0.08);
+            color: var(--color-accent-blue);
+        }
+
+        .icon-teal {
+            background-color: rgba(13, 148, 136, 0.08);
+            color: var(--color-accent-teal);
+        }
+
+        .icon-red {
+            background-color: rgba(225, 29, 72, 0.08);
+            color: var(--color-accent-red);
+        }
+
+        .icon-yellow {
+            background-color: rgba(202, 138, 4, 0.08);
+            color: var(--color-accent-yellow);
+        }
+
+        .service-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .service-card-desc {
+            font-size: 0.925rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-card-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid var(--color-border);
+            padding-top: 1.25rem;
+        }
+
+        .service-bullet-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-main);
+        }
+
+        .service-bullet-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: var(--color-text-light);
+        }
+
+        .service-card:hover .service-bullet-dot {
+            background-color: var(--color-accent-teal);
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--color-primary-navy);
+            transition: var(--transition-smooth);
+            gap: 0.25rem;
+        }
+
+        .service-link svg {
+            transition: var(--transition-smooth);
+        }
+
+        .service-link:hover {
+            color: var(--color-accent-red);
+        }
+
+        .service-link:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* ==========================================
+           5. WHY CHOOSE US SECTION
+           ========================================== */
+        .why-section {
+            background-color: var(--color-bg-light);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .why-grid {
+                grid-template-columns: 1.12fr 0.88fr;
+            }
+        }
+
+        .why-visual-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .why-visual-bg {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            background-color: rgba(59, 130, 246, 0.05);
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: 0;
+        }
+
+        .why-visual-svg {
+            z-index: 1;
+            filter: drop-shadow(0 15px 25px rgba(15, 23, 42, 0.06));
+        }
+
+        .benefit-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .benefit-icon-box {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: var(--color-bg-white);
+            border: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--color-accent-teal);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .benefit-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-content p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           6. CONTACT & FOOTER SECTION
+           ========================================== */
+        .contact-section {
+            background-color: var(--color-bg-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3.5rem;
+        }
+
+        @media (min-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 0.9fr 1.1fr;
+            }
+        }
+
+        .contact-info-panel {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: var(--color-bg-white);
+            border-radius: 16px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Abstract graphic in contact panel background */
+        .contact-info-panel-bg {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .contact-info-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-desc {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-details-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+        }
+
+        .contact-detail-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent-teal);
+            flex-shrink: 0;
+        }
+
+        .contact-detail-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-detail-value {
+            font-size: 0.975rem;
+            color: var(--color-bg-white);
+            line-height: 1.5;
+        }
+
+        .contact-detail-value a {
+            color: var(--color-bg-white);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .contact-detail-value a:hover {
+            color: var(--color-accent-teal);
+        }
+
+        .contact-socials-wrapper {
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+        }
+
+        .contact-socials-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+        }
+
+        .social-icons-flex {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon-link {
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-bg-white);
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .social-icon-link:hover {
+            background-color: var(--color-accent-teal);
+            color: var(--color-bg-white);
+            transform: translateY(-2px);
+        }
+
+        /* Form Card */
+        .contact-form-card {
+            background-color: var(--color-bg-white);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        @media (max-width: 576px) {
+            .contact-form-card {
+                padding: 1.75rem;
+            }
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 576px) {
+            .form-row-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .form-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-size: 0.95rem;
+            font-family: inherit;
+            color: var(--color-text-main);
+            background-color: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: var(--color-accent-blue);
+            background-color: var(--color-bg-white);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Inline validations using CSS `:user-valid` and `:has()` */
+        .form-input:user-valid {
+            border-color: var(--color-accent-teal);
+        }
+
+        /* Submit Button custom style */
+        .form-submit-btn {
+            width: 100%;
+            border: none;
+            outline: none;
+        }
+
+        /* Simulated Success Message banner */
+        .form-status-alert {
+            display: none;
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .alert-success {
+            background-color: rgba(13, 148, 136, 0.1);
+            color: var(--color-accent-teal);
+            border: 1px solid rgba(13, 148, 136, 0.2);
+        }
+
+        .alert-error {
+            background-color: rgba(225, 29, 72, 0.1);
+            color: var(--color-accent-red);
+            border: 1px solid rgba(225, 29, 72, 0.2);
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-bg-light);
+            border-top: 1px solid var(--color-primary-light);
+            padding: 5rem 0 2.5rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1.5fr repeat(3, 1fr);
+            }
+        }
+
+        .footer-logo-area {
+            max-width: 320px;
+        }
+
+        .footer-brand-name {
+            color: var(--color-bg-white) !important;
+        }
+
+        .footer-brand-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-top: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .footer-col-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-bg-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-link:hover {
+            color: var(--color-bg-white);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--color-primary-light);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+            }
+        }
+
+        .footer-copy {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom-link {
+            text-decoration: none;
+            color: var(--color-text-light);
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-bottom-link:hover {
+            color: var(--color-bg-white);
+        }
+
+        /* ==========================================
+           7. FLOATING CHAT WIDGET
+           ========================================== */
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            font-family: inherit;
+        }
+
+        .chat-toggle-btn {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background-color: var(--color-primary-navy);
+            color: var(--color-bg-white);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(30, 58, 138, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-bounce);
+            position: relative;
+            outline: none;
+        }
+
+        .chat-toggle-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--color-accent-teal);
+        }
+
+        .chat-toggle-btn svg {
+            transition: var(--transition-smooth);
+        }
+
+        .chat-toggle-btn.open svg {
+            transform: rotate(90deg);
+        }
+
+        .chat-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 14px;
+            height: 14px;
+            background-color: var(--color-accent-red);
+            border-radius: 50%;
+            border: 2px solid var(--color-bg-white);
+            animation: pulse-badge 2s infinite;
+        }
+
+        @keyframes pulse-badge {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(225, 29, 72, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); }
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 4.5rem;
+            right: 0;
+            width: 340px;
+            height: 460px;
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-origin: bottom right;
+        }
+
+        .chat-window.open {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 480px) {
+            .chat-window {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                width: 100vw;
+                height: 100vh;
+                border-radius: 0;
+            }
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-navy) 100%);
+            color: var(--color-bg-white);
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-header-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .chat-avatar {
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .chat-online-dot {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            background-color: var(--color-accent-teal);
+            border-radius: 50%;
+            border: 1.5px solid var(--color-primary-navy);
+        }
+
+        .chat-header-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .chat-header-subtitle {
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+        }
+
+        .chat-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--color-text-light);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            outline: none;
+        }
+
+        .chat-close-btn:hover {
+            color: var(--color-bg-white);
+            transform: scale(1.1);
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 1.25rem;
+            overflow-y: auto;
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-msg {
+            max-width: 85%;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .chat-msg-bot {
+            background-color: var(--color-bg-white);
+            color: var(--color-text-main);
+            border: 1px solid var(--color-border);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-msg-user {
+            background-color: var(--color-primary-navy);
+            color: var(--color-bg-white);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-input-area {
+            padding: 0.85rem 1.25rem;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: var(--color-bg-white);
+        }
+
+        .chat-input {
+            flex-grow: 1;
+            border: none;
+            outline: none;
+            font-size: 0.9rem;
+            font-family: inherit;
+            color: var(--color-text-main);
+        }
+
+        .chat-send-btn {
+            background: transparent;
+            border: none;
+            color: var(--color-primary-navy);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+        }
+
+        .chat-send-btn:hover {
+            color: var(--color-accent-teal);
+            transform: scale(1.1);
+        }
+
+        /* Typing indicator dots */
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
+            width: 52px;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--color-text-light);
+            border-radius: 50%;
+            animation: bounce-typing 1.4s infinite ease-in-out both;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounce-typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Overlay backdrop for mobile navigation -->
+    <div class="overlay" id="nav-overlay"></div>
+
+    <!-- ==========================================
+       1. HEADER / NAVIGATION
+       ========================================== -->
+    <header id="site-header">
+        <div class="container nav-wrapper">
+            <!-- Modern geometric interlocking logo -->
+            <a href="#" class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="6" width="9" height="28" rx="4.5" fill="url(#p-grad-blue)"/>
+                    <path d="M15 6 H26 C30.9706 6 35 10.0294 35 15 C35 19.9706 30.9706 24 26 24 H15" fill="url(#p-grad-green)"/>
+                    <circle cx="15" cy="15" r="5.5" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+                    <circle cx="27" cy="15" r="4" fill="#F59E0B"/>
+                    <defs>
+                        <linearGradient id="p-grad-blue" x1="6" y1="6" x2="15" y2="34" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#1E3A8A"/>
+                            <stop offset="100%" stop-color="#3B82F6"/>
+                        </linearGradient>
+                        <linearGradient id="p-grad-green" x1="15" y1="15" x2="35" y2="15" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#10B981"/>
+                            <stop offset="100%" stop-color="#0D9488"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="logo-text">
+                    PRIMEPATH
+                    <span>Advisors</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Desktop CTA -->
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-outline" style="padding: 0.55rem 1.25rem; font-size: 0.9rem;">Book a Consultation</a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button class="burger-menu" id="burger-toggle" aria-label="Toggle Navigation">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer menu -->
+    <nav class="mobile-nav" id="mobile-drawer">
+        <ul class="mobile-links">
+            <li><a href="#" class="mobile-link">Home</a></li>
+            <li><a href="#services" class="mobile-link">Services</a></li>
+            <li><a href="#why-us" class="mobile-link">Why Us</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-solid" style="width: 100%;">Book a Consultation</a>
+    </nav>
+
+
+    <!-- ==========================================
+       2. HERO SECTION
+       ========================================== -->
+    <section class="hero-section" id="home">
+        <div class="container hero-grid">
+            <div class="reveal">
+                <!-- Zoho Authorized badge -->
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    <span class="hero-badge-text">Zoho Partner & Accounting Specialist</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Streamline Your Finances with Expert Accounting & Zoho Integration
+                </h1>
+                
+                <p class="hero-desc">
+                    We bridge the gap between complex financial reporting compliance and automated cloud operations. Get robust bookkeeping, tax filings, and customizable Zoho setups tailored to scale your enterprise seamlessly.
+                </p>
+                
+                <ul class="hero-checklist">
+                    <li class="hero-checklist-item">
+                        <span class="hero-checklist-icon">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2.5 6L5 8.5L9.5 3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        Rigorous Accounting Standards (GAAP / Ind AS)
+                    </li>
+                    <li class="hero-checklist-item">
+                        <span class="hero-checklist-icon">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2.5 6L5 8.5L9.5 3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        Zoho Books, CRM, & Creator Customizations
+                    </li>
+                    <li class="hero-checklist-item">
+                        <span class="hero-checklist-icon">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2.5 6L5 8.5L9.5 3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        Zero-Data-Loss Legacy Migrations
+                    </li>
+                </ul>
+
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-solid">Get Started</a>
+                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                </div>
+            </div>
+            
+            <!-- Large interactive dashboard vector illustration -->
+            <div class="hero-visual reveal delay-1">
+                <svg class="svg-hero-glow" width="100%" height="440" viewBox="0 0 520 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 500px; height: auto;">
+                    <!-- Main Dashboard Frame -->
+                    <rect x="20" y="40" width="480" height="340" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+                    <rect x="20" y="40" width="480" height="50" rx="16" fill="#F8FAFC"/>
+                    <line x1="20" y1="90" x2="500" y2="90" stroke="#E2E8F0" stroke-width="1.5"/>
+                    
+                    <!-- Browser frame dots -->
+                    <circle cx="45" cy="65" r="5" fill="#EF4444"/>
+                    <circle cx="60" cy="65" r="5" fill="#F59E0B"/>
+                    <circle cx="75" cy="65" r="5" fill="#10B981"/>
+                    <rect x="110" y="55" width="220" height="20" rx="10" fill="#E2E8F0"/>
+                    <circle cx="465" cy="65" r="7" fill="#94A3B8"/>
+                    
+                    <!-- Grid background lines inside browser -->
+                    <path d="M40 160H480 M40 230H480 M40 300H480" stroke="#F1F5F9" stroke-width="1.5"/>
+                    
+                    <!-- Floating Analytics Card 1: Revenue Line Chart -->
+                    <g class="floating-card-1">
+                        <rect x="50" y="110" width="250" height="150" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.03))"/>
+                        <text x="70" y="140" fill="#0F172A" font-weight="700" font-family="Inter" font-size="13">Monthly Business Growth</text>
+                        <text x="70" y="160" fill="#0D9488" font-weight="800" font-family="Inter" font-size="20">₹14,82,900</text>
+                        
+                        <!-- Line Graph Path -->
+                        <path d="M70 230 Q 110 210 140 190 T 210 160 T 270 145" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M70 230 Q 110 210 140 190 T 210 160 T 270 145 V 230 H 70 Z" fill="url(#blue-gradient)" opacity="0.15"/>
+                        <circle cx="270" cy="145" r="4" fill="#2563EB"/>
+                        <circle class="pulse-node" cx="270" cy="145" r="6" fill="#2563EB"/>
+                    </g>
+                    
+                    <!-- Floating Analytics Card 2: Zoho Integration Sync Status -->
+                    <g class="floating-card-2">
+                        <rect x="320" y="110" width="150" height="150" rx="12" fill="#0F172A" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.1))"/>
+                        <text x="340" y="140" fill="#94A3B8" font-weight="600" font-family="Inter" font-size="11" letter-spacing="0.05em">ZOHO CLOUD SYNC</text>
+                        <text x="340" y="165" fill="#FFFFFF" font-weight="800" font-family="Inter" font-size="18">Active</text>
+                        
+                        <!-- Circle Progress -->
+                        <circle cx="395" cy="210" r="24" stroke="#1E293B" stroke-width="5" fill="none"/>
+                        <circle cx="395" cy="210" r="24" stroke="#0D9488" stroke-width="5" fill="none" stroke-dasharray="150" stroke-dashoffset="35" stroke-linecap="round"/>
+                        <text x="395" y="214" fill="#FFFFFF" font-weight="700" font-family="Inter" font-size="11" text-anchor="middle">85%</text>
+                    </g>
+                    
+                    <!-- Bottom Metrics Area -->
+                    <g class="floating-card-1">
+                        <rect x="50" y="280" width="190" height="70" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+                        <!-- Calculator mini symbol -->
+                        <rect x="65" y="295" width="26" height="36" rx="4" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+                        <line x1="71" y1="302" x2="85" y2="302" stroke="#2563EB" stroke-width="2"/>
+                        <circle cx="72" cy="312" r="1.5" fill="#2563EB"/><circle cx="79" cy="312" r="1.5" fill="#2563EB"/><circle cx="84" cy="312" r="1.5" fill="#2563EB"/>
+                        <circle cx="72" cy="318" r="1.5" fill="#2563EB"/><circle cx="79" cy="318" r="1.5" fill="#2563EB"/><circle cx="84" cy="318" r="1.5" fill="#2563EB"/>
+                        <circle cx="72" cy="324" r="1.5" fill="#2563EB"/><circle cx="79" cy="324" r="1.5" fill="#2563EB"/><circle cx="84" cy="324" r="1.5" fill="#2563EB"/>
+                        
+                        <text x="105" y="310" fill="#94A3B8" font-family="Inter" font-weight="600" font-size="9" letter-spacing="0.05em">TAX COMPLIANCE</text>
+                        <text x="105" y="328" fill="#0F172A" font-family="Inter" font-weight="700" font-size="14">Auto-Calculated</text>
+                    </g>
+                    
+                    <!-- Cloud Sync graphic connections -->
+                    <g class="floating-cloud">
+                        <rect x="250" y="280" width="230" height="70" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.03))"/>
+                        <path d="M262 320 C 262 310, 272 305, 279 308 C 282 300, 294 300, 297 308 C 304 306, 310 312, 308 320 Z" fill="#E11D48" opacity="0.9"/>
+                        <!-- Transfer Arrows -->
+                        <path d="M318 315 L 333 315" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M328 310 L 333 315 L 328 320" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+                        <!-- Sync server box -->
+                        <rect x="345" y="300" width="30" height="30" rx="6" fill="#10B981"/>
+                        <path d="M352 315 H 368 M360 307 V 323" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                        <text x="385" y="312" fill="#94A3B8" font-family="Inter" font-weight="600" font-size="9" letter-spacing="0.05em">DATA PIPELINE</text>
+                        <text x="385" y="326" fill="#0F172A" font-family="Inter" font-weight="700" font-size="11" letter-spacing="-0.02em">Secure Migration</text>
+                    </g>
+                    
+                    <!-- Gradients definitions -->
+                    <defs>
+                        <linearGradient id="blue-gradient" x1="170" y1="145" x2="170" y2="230" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#2563EB" stop-opacity="0.3"/>
+                            <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Subtle Wave Curve divider -->
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       3. SERVICES SECTION
+       ========================================== -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Expert Capabilities</span>
+                <h2 class="section-title">Corporate Accounting & Cloud Zoho Architecture</h2>
+                <p class="section-desc">
+                    We combine rigorous accounting standards with state-of-the-art Zoho cloud architecture to create highly compliant, optimized pipelines.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Card 1: Bookkeeping & Accounting -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrapper icon-blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="2" width="16" height="20" rx="2" stroke-width="2"/>
+                            <line x1="9" y1="14" x2="15" y2="14"/>
+                            <line x1="9" y1="18" x2="15" y2="18"/>
+                            <rect x="8" y="6" width="8" height="4" rx="1"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-card-title">Bookkeeping & Accounting</h3>
+                    <p class="service-card-desc">
+                        Full-service corporate accounting built around rigorous standards (GAAP/Ind AS/IFRS). Tax compliance, corporate ledger preparation, audits, and monthly management reporting.
+                    </p>
+                    <ul class="service-card-bullets">
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Monthly P&L & Balance Sheet</li>
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>GST & ROC filing compliance</li>
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Budgeting & cash flow forecasting</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Inquire Details 
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+
+                <!-- Card 2: Zoho Software Setup -->
+                <div class="service-card reveal delay-1">
+                    <div class="service-icon-wrapper icon-teal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-card-title">Zoho Software Setup</h3>
+                    <p class="service-card-desc">
+                        Custom workspace configuration for Zoho One suite. We map Zoho Books, Zoho CRM, Zoho Inventory, and Zoho Creator to match your company's operational processes.
+                    </p>
+                    <ul class="service-card-bullets">
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Custom Zoho One deployments</li>
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Tailored modules & database hooks</li>
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Automated invoices & sync tasks</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Inquire Details 
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+
+                <!-- Card 3: Data Migration -->
+                <div class="service-card reveal delay-2">
+                    <div class="service-icon-wrapper icon-red">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                            <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-card-title">Data Migration</h3>
+                    <p class="service-card-desc">
+                        Secure transitions from legacy architectures (Tally, QuickBooks, Excel) into your newly optimized Zoho Finance setups, guaranteeing 100% data integrity and zero record loss.
+                    </p>
+                    <ul class="service-card-bullets">
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Historical ledger schema mapping</li>
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Integrity checks & reconciliation</li>
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Zero operational downtime</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Inquire Details 
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+
+                <!-- Card 4: Ongoing Support & Advisory -->
+                <div class="service-card reveal delay-3">
+                    <div class="service-icon-wrapper icon-yellow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-card-title">Ongoing Support & Advisory</h3>
+                    <p class="service-card-desc">
+                        Monthly advisory reviews to audit books, resolve technical Zoho bugs, train local staff, and prepare strategic reports for executive decisions.
+                    </p>
+                    <ul class="service-card-bullets">
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Direct Zoho developer helpdesk</li>
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Quarterly audit review audits</li>
+                        <li class="service-bullet-item"><span class="service-bullet-dot"></span>Staff Zoho workflow training</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Inquire Details 
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       4. WHY CHOOSE US SECTION
+       ========================================== -->
+    <section class="why-section" id="why-us">
+        <div class="container why-grid">
+            
+            <!-- Graphic Illustration (Left-Aligned on Wide, Right-Aligned in Section grid) -->
+            <div class="why-visual-wrapper reveal">
+                <div class="why-visual-bg"></div>
+                <svg class="why-visual-svg" width="100%" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 400px; height: auto;">
+                    <!-- Shield representing Trust & Compliance -->
+                    <path d="M220 40 L 350 90 V 220 C 350 310, 290 370, 220 400 C 150 370, 90 310, 90 220 V 90 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="4"/>
+                    
+                    <!-- Core Zoho integration grid in shield -->
+                    <circle cx="220" cy="180" r="60" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+                    <!-- Zoho color arcs around center -->
+                    <path d="M220 120 A 60 60 0 0 1 280 180" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M280 180 A 60 60 0 0 1 220 240" stroke="#10B981" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M220 240 A 60 60 0 0 1 160 180" stroke="#F59E0B" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M160 180 A 60 60 0 0 1 220 120" stroke="#EF4444" stroke-width="6" stroke-linecap="round"/>
+                    
+                    <!-- Graph upward arrow passing through center -->
+                    <path d="M150 250 L 205 195 L 235 225 L 290 150" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M275 150 H 290 V 165" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <!-- Secure Lock symbol inside circle -->
+                    <rect x="205" y="170" width="30" height="24" rx="4" fill="#1E3A8A"/>
+                    <path d="M211 170 V 162 C 211 157, 215 153, 220 153 C 225 153, 229 157, 229 162 V 170" stroke="#1E3A8A" stroke-width="2.5" fill="none"/>
+                    
+                    <!-- Interactive sync nodes in perimeter -->
+                    <circle cx="90" cy="90" r="15" fill="#3B82F6"/>
+                    <circle cx="350" cy="90" r="15" fill="#10B981"/>
+                    <circle cx="350" cy="220" r="15" fill="#EF4444"/>
+                    
+                    <!-- Checkmarks inside node circles -->
+                    <path d="M85 90 L 89 94 L 96 87" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M345 90 L 349 94 L 356 87" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M345 220 L 349 224 L 356 217" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <!-- Value propositions (Right column) -->
+            <div class="reveal">
+                <span class="section-tag">Value Proposition</span>
+                <h2 class="section-title mb-3">Enterprise Financial Control</h2>
+                <p class="section-desc mb-6">
+                    Our interdisciplinary skill set in accounting standards compliance and Zoho cloud consulting guarantees your financial data is clear, accurate, and completely synchronized.
+                </p>
+
+                <div class="benefit-list">
+                    <!-- Proposition 1 -->
+                    <div class="benefit-item">
+                        <div class="benefit-icon-box">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Time-Saving Automation</h3>
+                            <p>We deploy Zoho Flow, workflows, and automated invoice triggers, reducing manual entry cycles by up to 75% for finance teams.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proposition 2 -->
+                    <div class="benefit-item">
+                        <div class="benefit-icon-box">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Rigorous Compliance Standards</h3>
+                            <p>Whether filing local corporate GST returns, navigating MCA audits in India, or mapping records to international GAAP, we guarantee total compliance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proposition 3 -->
+                    <div class="benefit-item">
+                        <div class="benefit-icon-box">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                                <line x1="4" y1="22" x2="4" y2="15"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Tailored Workflows</h3>
+                            <p>No generic setups. We design custom ledger charts, inventory flows, and CRM synchronization triggers centered on how you actually generate revenue.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       5. CONTACT & FOOTER SECTION
+       ========================================== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Consulting</span>
+                <h2 class="section-title">Schedule a Strategic Review</h2>
+                <p class="section-desc">
+                    Ready to audit your ledger processes or modernize your cloud infrastructure? Fill out the details below to consult with our financial architects.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                
+                <!-- Contact info panel -->
+                <div class="contact-info-panel reveal">
+                    <div>
+                        <h3 class="contact-info-title">Offices & Details</h3>
+                        <p class="contact-info-desc">
+                            Reach us via phone or visit our Kolkata headquarters. Our team is available Mon-Fri, 9:30 AM to 6:30 PM.
+                        </p>
+
+                        <ul class="contact-details-list">
+                            <li class="contact-detail-item">
+                                <div class="contact-detail-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div>
+                                    <div class="contact-detail-label">Kolkata Office</div>
+                                    <div class="contact-detail-value">
+                                        FD-145, FD Block, Sector 3, <br>Bidhannagar, Kolkata, West Bengal - 700106
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <li class="contact-detail-item">
+                                <div class="contact-detail-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div>
+                                    <div class="contact-detail-label">Email Support</div>
+                                    <div class="contact-detail-value">
+                                        <a href="mailto:Aaditya@finanzen.in">Aaditya@finanzen.in</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="contact-detail-item">
+                                <div class="contact-detail-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="contact-detail-label">Direct Lines</div>
+                                    <div class="contact-detail-value">
+                                        <a href="tel:+918697436114">+91 86974 36114</a> <br>
+                                        <a href="tel:+919830602727">+91 98306 02727</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Social accounts -->
+                    <div class="contact-socials-wrapper">
+                        <div class="contact-socials-title">Follow Our Insights</div>
+                        <div class="social-icons-flex">
+                            <a href="#" class="social-icon-link" aria-label="LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                            <a href="#" class="social-icon-link" aria-label="Twitter">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                            </a>
+                            <a href="#" class="social-icon-link" aria-label="Facebook">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Custom SVG map backdrop design inside card -->
+                    <div class="contact-info-panel-bg">
+                        <svg width="240" height="240" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="40" stroke="#FFFFFF" stroke-width="0.5" stroke-dasharray="2 2"/>
+                            <circle cx="50" cy="50" r="28" stroke="#FFFFFF" stroke-width="0.5"/>
+                            <circle cx="50" cy="50" r="16" stroke="#FFFFFF" stroke-width="0.5" stroke-dasharray="4 2"/>
+                            <line x1="50" y1="0" x2="50" y2="100" stroke="#FFFFFF" stroke-width="0.3"/>
+                            <line x1="0" y1="50" x2="100" y2="50" stroke="#FFFFFF" stroke-width="0.3"/>
+                            <circle cx="50" cy="50" r="4" fill="#0D9488"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Form Panel -->
+                <div class="contact-form-card reveal delay-1">
+                    <!-- Status alerts placeholder -->
+                    <div class="form-status-alert alert-success" id="form-success-banner">
+                        <strong>Thank You!</strong> Your request has been logged. An advisor will contact you within 24 hours.
+                    </div>
+                    <div class="form-status-alert alert-error" id="form-error-banner">
+                        <strong>Error!</strong> Please fill in all fields correctly before submitting.
+                    </div>
+
+                    <form id="consultation-form" novalidate>
+                        <div class="form-row form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="form-name">Full Name *</label>
+                                <input class="form-input" type="text" id="form-name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="form-email">Email Address *</label>
+                                <input class="form-input" type="email" id="form-email" placeholder="john@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="form-service">Required Service *</label>
+                                <select class="form-select" id="form-service" required>
+                                    <option value="" disabled selected>Select from capabilities...</option>
+                                    <option value="bookkeeping">Bookkeeping & Compliance Accounting</option>
+                                    <option value="zoho-setup">Zoho Software Setup & Config</option>
+                                    <option value="data-migration">Zero-Loss Data Migration</option>
+                                    <option value="ongoing-support">Advisory & Developer Support</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="form-message">Detailed Requirements *</label>
+                                <textarea class="form-textarea" id="form-message" placeholder="Provide context on your transaction volumes, business vertical, or Zoho integration goals..." required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-solid form-submit-btn">
+                            Send Request
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       6. FOOTER
+       ========================================== -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-logo-area">
+                <a href="#" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="6" y="6" width="9" height="28" rx="4.5" fill="url(#p-grad-footer-blue)"/>
+                        <path d="M15 6 H26 C30.9706 6 35 10.0294 35 15 C35 19.9706 30.9706 24 26 24 H15" fill="url(#p-grad-footer-green)"/>
+                        <circle cx="15" cy="15" r="5.5" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+                        <circle cx="27" cy="15" r="4" fill="#F59E0B"/>
+                        <defs>
+                            <linearGradient id="p-grad-footer-blue" x1="6" y1="6" x2="15" y2="34" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#3B82F6"/>
+                                <stop offset="100%" stop-color="#0D9488"/>
+                            </linearGradient>
+                            <linearGradient id="p-grad-footer-green" x1="15" y1="15" x2="35" y2="15" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#10B981"/>
+                                <stop offset="100%" stop-color="#e11d48"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="logo-text footer-brand-name">
+                        PRIMEPATH
+                        <span style="color: #94A3B8;">Advisors</span>
+                    </div>
+                </a>
+                <p class="footer-brand-desc">
+                    Providing top-tier management accounting, compliance bookkeeping, and integrated Zoho Cloud architecture solutions for modern companies scaling globally.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="footer-col-title">Capabilities</h4>
+                <ul class="footer-links">
+                    <li><a href="#services" class="footer-link">Bookkeeping</a></li>
+                    <li><a href="#services" class="footer-link">Zoho Customization</a></li>
+                    <li><a href="#services" class="footer-link">Tally Migration</a></li>
+                    <li><a href="#services" class="footer-link">ROC & Corporate Filing</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-col-title">Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Pricing Models</a></li>
+                    <li><a href="#" class="footer-link">Zoho User Guides</a></li>
+                    <li><a href="#" class="footer-link">GST Filing Dates</a></li>
+                    <li><a href="#" class="footer-link">Case Studies</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-col-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#why-us" class="footer-link">About Us</a></li>
+                    <li><a href="#" class="footer-link">Kolkata Office</a></li>
+                    <li><a href="#contact" class="footer-link">Schedule Meeting</a></li>
+                    <li><a href="#" class="footer-link">Privacy Terms</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <div class="footer-copy">
+                &copy; 2026 Primepath Advisors. All rights reserved. Registered Zoho Consulting Partner.
+            </div>
+            <div class="footer-bottom-links">
+                <a href="#" class="footer-bottom-link">Terms of Service</a>
+                <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                <a href="#" class="footer-bottom-link">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+       7. FLOATING CHAT WIDGET
+       ========================================== -->
+    <div class="chat-widget" id="chat-widget">
+        <!-- Badge notifies a pending welcome message -->
+        <button class="chat-toggle-btn" id="chat-toggle" aria-label="Open support chat">
+            <span class="chat-badge" id="chat-notification-badge"></span>
+            <!-- Speech bubble icon -->
+            <svg id="chat-toggle-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+        </button>
+
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chat-avatar">
+                        <!-- Tiny custom geometric logo inside avatar -->
+                        <svg width="18" height="18" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="6" width="9" height="28" rx="4.5" fill="#FFFFFF"/>
+                            <path d="M15 6 H26 C30.9706 6 35 10.0294 35 15 C35 19.9706 30.9706 24 26 24 H15" fill="#10B981"/>
+                        </svg>
+                        <span class="chat-online-dot"></span>
+                    </div>
+                    <div>
+                        <div class="chat-header-title">Primepath Assistant</div>
+                        <div class="chat-header-subtitle">AI Consultant • Online</div>
+                    </div>
+                </div>
+                <button class="chat-close-btn" id="chat-close" aria-label="Close chat">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-msg chat-msg-bot">
+                    Hello! I'm your Primepath Virtual Assistant. 👋 <br><br>
+                    Ask me anything about our **Accounting**, **Bookkeeping & GST**, **Zoho One setups**, or **Data migrations**. How can I help you streamline your business operations today?
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chat-input" placeholder="Type your query..." autocomplete="off">
+                <button class="chat-send-btn" id="chat-send" aria-label="Send message">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       8. VANILLA JAVASCRIPT
+       ========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Sticky Navbar Transition ---
+            const header = document.getElementById('site-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // --- Mobile Drawer Toggle ---
+            const burgerToggle = document.getElementById('burger-toggle');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const navOverlay = document.getElementById('nav-overlay');
+            const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-nav .btn');
+
+            function toggleMobileNav() {
+                burgerToggle.classList.toggle('open');
+                mobileDrawer.classList.toggle('open');
+                navOverlay.classList.toggle('open');
+                
+                // Toggle body scroll freeze
+                if (mobileDrawer.classList.contains('open')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+
+            burgerToggle.addEventListener('click', toggleMobileNav);
+            navOverlay.addEventListener('click', toggleMobileNav);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMobileNav);
+            });
+
+            // --- Reveal Animations (Intersection Observer) ---
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const observerOptions = {
+                root: null, // Viewport
+                threshold: 0.1, // Trigger when 10% of element is in view
+                rootMargin: '0px 0px -50px 0px' // Offset to ensure visual comfort
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Unobserve after showing to retain state
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
+
+            // --- Interactive Consultation Form Validation & Submit ---
+            const form = document.getElementById('consultation-form');
+            const successBanner = document.getElementById('form-success-banner');
+            const errorBanner = document.getElementById('form-error-banner');
+
+            // --- REAL EMAIL SUBMISSION SETUP ---
+            const WEB3FORMS_ACCESS_KEY = "b9fa85a6-7124-4ae7-afea-660e236a334d";
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Hide existing banners
+                successBanner.style.display = 'none';
+                errorBanner.style.display = 'none';
+
+                // Fetch elements
+                const nameField = document.getElementById('form-name');
+                const emailField = document.getElementById('form-email');
+                const serviceField = document.getElementById('form-service');
+                const messageField = document.getElementById('form-message');
+
+                // Basic manual validation checks
+                let hasError = false;
+
+                // Validate Name
+                if (!nameField.value.trim()) {
+                    nameField.style.borderColor = 'var(--color-accent-red)';
+                    hasError = true;
+                } else {
+                    nameField.style.borderColor = '';
+                }
+
+                // Validate Email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailField.value.trim() || !emailRegex.test(emailField.value)) {
+                    emailField.style.borderColor = 'var(--color-accent-red)';
+                    hasError = true;
+                } else {
+                    emailField.style.borderColor = '';
+                }
+
+                // Validate Service Selector
+                if (!serviceField.value) {
+                    serviceField.style.borderColor = 'var(--color-accent-red)';
+                    hasError = true;
+                } else {
+                    serviceField.style.borderColor = '';
+                }
+
+                // Validate Message
+                if (!messageField.value.trim()) {
+                    messageField.style.borderColor = 'var(--color-accent-red)';
+                    hasError = true;
+                } else {
+                    messageField.style.borderColor = '';
+                }
+
+                if (hasError) {
+                    errorBanner.style.display = 'block';
+                    errorBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    return;
+                }
+
+                const submitBtn = form.querySelector('.form-submit-btn');
+                const originalBtnHTML = submitBtn.innerHTML;
+                
+                // Visual Loading State
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+                submitBtn.innerHTML = 'Processing Request...';
+
+                // Check if Access Key is configured
+                if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
+                    fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            access_key: WEB3FORMS_ACCESS_KEY,
+                            subject: `New Lead: ${nameField.value} - ${serviceField.options[serviceField.selectedIndex].text}`,
+                            from_name: "Primepath Advisors Portal",
+                            replyto: emailField.value,
+                            "Client Name": nameField.value,
+                            "Email Address": emailField.value,
+                            "Requested Service": serviceField.options[serviceField.selectedIndex].text,
+                            "Project Requirements": messageField.value
+                        })
+                    })
+                    .then(async (response) => {
+                        const json = await response.json();
+                        if (response.status === 200) {
+                            successBanner.innerHTML = `<strong>Success!</strong> Your request has been sent. We will get in touch shortly.`;
+                            successBanner.className = "form-status-alert alert-success";
+                            successBanner.style.display = 'block';
+                            form.reset();
+                        } else {
+                            errorBanner.innerHTML = `<strong>Error!</strong> ${json.message || "Failed to submit request. Please try again."}`;
+                            errorBanner.style.display = 'block';
+                        }
+                    })
+                    .catch(() => {
+                        errorBanner.innerHTML = `<strong>Error!</strong> Could not connect to submission server. Check your network.`;
+                        errorBanner.style.display = 'block';
+                    })
+                    .finally(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                        submitBtn.innerHTML = originalBtnHTML;
+                        
+                        const activeBanner = successBanner.style.display === 'block' ? successBanner : errorBanner;
+                        activeBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    });
+                } else {
+                    // Fallback to offline visual simulation
+                    setTimeout(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                        submitBtn.innerHTML = originalBtnHTML;
+
+                        successBanner.innerHTML = `<strong>Simulated Success!</strong> Set your Web3Forms access key in the script tag at the bottom of the page to receive real email alerts.`;
+                        successBanner.className = "form-status-alert alert-success";
+                        successBanner.style.display = 'block';
+                        form.reset();
+                        
+                        successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 1500);
+                }
+            });
+
+            // --- Floating Chat Bot Functionality ---
+            const chatToggle = document.getElementById('chat-toggle');
+            const chatToggleIcon = document.getElementById('chat-toggle-icon');
+            const chatWindow = document.getElementById('chat-window');
+            const chatClose = document.getElementById('chat-close');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatInput = document.getElementById('chat-input');
+            const chatSend = document.getElementById('chat-send');
+            const chatBadge = document.getElementById('chat-notification-badge');
+
+            // Toggle Open/Close
+            function toggleChat() {
+                const isOpen = chatWindow.classList.toggle('open');
+                chatToggle.classList.toggle('open');
+                
+                if (isOpen) {
+                    chatBadge.style.display = 'none'; // Clear notification badge
+                    setTimeout(() => chatInput.focus(), 150);
+                }
+            }
+
+            chatToggle.addEventListener('click', toggleChat);
+            chatClose.addEventListener('click', toggleChat);
+
+            // Handle Send Message
+            function handleUserMessage() {
+                const query = chatInput.value.trim();
+                if (!query) return;
+
+                // Render user message bubble
+                appendMessage(query, 'user');
+                chatInput.value = '';
+
+                // Render Typing Indicator
+                const indicator = renderTypingIndicator();
+                chatMessages.appendChild(indicator);
+                scrollToBottom();
+
+                // Compute Bot response after delay
+                setTimeout(() => {
+                    chatMessages.removeChild(indicator);
+                    const botResponse = getBotResponse(query);
+                    appendMessage(botResponse, 'bot');
+                    scrollToBottom();
+                }, 1000);
+            }
+
+            chatSend.addEventListener('click', handleUserMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleUserMessage();
+            });
+
+            // Append bubble
+            function appendMessage(text, sender) {
+                const bubble = document.createElement('div');
+                bubble.className = `chat-msg chat-msg-${sender}`;
+                // Convert simple Markdown-like bold tags to HTML
+                bubble.innerHTML = text.replace(/\*\*(.*?)\*\?/g, '<strong>$1</strong>');
+                chatMessages.appendChild(bubble);
+            }
+
+            // Scroll to bottom
+            function scrollToBottom() {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Render loading dots
+            function renderTypingIndicator() {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'chat-msg chat-msg-bot typing-indicator';
+                wrapper.innerHTML = `
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                `;
+                return wrapper;
+            }
+
+            // Chatbot Response mapping logic
+            function getBotResponse(query) {
+                const lower = query.toLowerCase();
+
+                if (lower.includes('zoho') || lower.includes('crm') || lower.includes('creator') || lower.includes('books') || lower.includes('inventory')) {
+                    return "We provide customized **Zoho One setups**, integrating Zoho Books, CRM, Creator, and Inventory. We build workflows and automated hooks tailored to your specific business operations.";
+                }
+                if (lower.includes('bookkeep') || lower.includes('account') || lower.includes('tax') || lower.includes('gst') || lower.includes('roc') || lower.includes('ledger')) {
+                    return "Our **accounting and bookkeeping** division manages full ledger records, monthly P&Ls, balance sheets, and complete compliance audits (GST, ROC, ROC filings) to GAAP/Ind AS standards.";
+                }
+                if (lower.includes('migrate') || lower.includes('tally') || lower.includes('quickbooks') || lower.includes('excel')) {
+                    return "We offer secure **data migrations** from systems like Tally, Excel, or QuickBooks to Zoho Books with zero data loss and minimal operational downtime.";
+                }
+                if (lower.includes('contact') || lower.includes('phone') || lower.includes('call') || lower.includes('email') || lower.includes('address') || lower.includes('office')) {
+                    return "You can email us at **Aaditya@finanzen.in**, call us at **+91 86974 36114**, or visit our office at **FD-145, FD Block, Sector 3, Bidhannagar, Kolkata - 700106**.";
+                }
+                if (lower.includes('price') || lower.includes('cost') || lower.includes('fee') || lower.includes('charge') || lower.includes('plan')) {
+                    return "Our pricing is tailored to your transaction volumes and software modules. We suggest booking a **free discovery call** via the contact form on this page so we can map out your requirements!";
+                }
+                if (lower.includes('hi') || lower.includes('hello') || lower.includes('hey') || lower.includes('help')) {
+                    return "Hello! I am ready to answer questions about: <br>1. **Zoho systems** setups<br>2. **Bookkeeping & GST** filing<br>3. **Data migrations**<br>4. Our **office locations & contacts**.<br><br>What can I help you with?";
+                }
+                
+                // Fallback
+                return "That's an interesting question! I recommend submitting this via the **'Schedule a Strategic Review'** form on this page, or emailing us at **Aaditya@finanzen.in**. One of our expert consultants will get back to you within 24 hours!";
+            }
+        });
+    </script>
+</body>
+</html>
